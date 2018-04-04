@@ -1,24 +1,39 @@
 {
   "actions": [
     {
-      "description": "Default Welcome Intent",
+      "description": "Game Butler Welcome Intent",
       "name": "MAIN",
       "fulfillment": {
-        "conversationName": "<INSERT YOUR CONVERSATION NAME HERE>"
+        "conversationName": "game-butler"
       },
       "intent": {
         "name": "actions.intent.MAIN",
         "trigger": {
           "queryPatterns": [
-            "talk to <INSERT YOUR NAME HERE>"
+            "talk to Game Butler"
           ]
         }
       }
-    }
+    },
+    {
+      "name": "START_GAME",
+      "intent": {
+        "name": "com.mpohl.START_GAME",
+        "trigger": {
+          "queryPatterns": [
+            "play Yatzhee",
+            "play Tichu",
+          ]
+        }
+      },
+      "fulfillment": {
+        "conversationName": "game-butler"
+      }
+    },  
   ],
   "conversations": {
-    "<INSERT YOUR CONVERSATION NAME HERE>": {
-      "name": "<INSERT YOUR CONVERSATION NAME HERE>",
+    "game-butler": {
+      "name": "game-butler",
       "url": "<INSERT YOUR FULLFILLMENT URL HERE>"
     }
   },
